@@ -12,14 +12,14 @@ const Stream = () => {
     {
       name: 'YouTube',
       icon: Youtube,
-      href: '#',
+      href: 'https://www.youtube.com/@itsmegames_',
       color: 'text-red-400',
       hoverColor: 'hover:text-red-300',
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      href: '#',
+      href: 'https://www.instagram.com/itsmegames_/',
       color: 'text-pink-400',
       hoverColor: 'hover:text-pink-300',
     },
