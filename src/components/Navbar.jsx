@@ -33,8 +33,8 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#home" className="flex items-center space-x-2 group">
           {/* Puedes reemplazar esto con tu imagen de logo real */}
-          <div className="w-10 h-10 bg-neon rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.8)] transition-shadow">
-            <span className="text-darkbg font-Orbitron font-bold text-xl">IG</span>
+          <div className="w-10 h-10 bg-neon rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.8)] transition-shadow overflow-hidden">
+            <img src="/IMG.png" alt="ItsMeGames Logo" className="w-full h-full object-cover" />
           </div>
           <span className="text-2xl font-bold font-Orbitron text-white group-hover:text-neon transition-colors">
             ItsMeGames

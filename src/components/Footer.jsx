@@ -6,8 +6,8 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Twitch, href: 'https://twitch.tv/itsmegames_', label: 'Twitch' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Youtube, href: 'https://www.youtube.com/@itsmegames_', label: 'YouTube' },
+    { icon: Instagram, href: 'https://www.instagram.com/itsmegames_/', label: 'Instagram' },
   ];
 
   return (

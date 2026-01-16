@@ -11,7 +11,7 @@ const Hero = () => {
         className="max-w-4xl"
       >
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          FROM HOBBY TO <span className="text-neon text-glow">CREATORS</span>
+          FROM PLAYERS TO <span className="text-neon text-glow">CREATORS</span>
         </h1>
         
         <motion.p 
