@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const teamMembers = [
   { 
     name: "Brunito", 
-    role: "Fundador", 
+    role: "Founder & Game Director", 
     emoji: "🎮", 
     image: "/team/brunito.png",
     description: "El cerebro detrás de todo. Fanático de los RPGs y de romper el código hasta que funcione."
@@ -18,14 +18,14 @@ const teamMembers = [
   },
   { 
     name: "Azul", 
-    role: "Análisis & UI/UX", 
+    role: "Lider de Diseño UI/UX", 
     emoji: "🎨", 
     image: "/team/azul.png",
     description: "Arquitecta de interfaces. Fusiona los requerimientos puros del sistema con un diseño visual impactante."
   },
   { 
     name: "Mamba", 
-    role: "Jefe de Equipo", 
+    role: "Community Lead", 
     emoji: "💼", 
     image: "/team/mamba.png",
     description: "Mantiene al equipo enfocado. Experta en apagar incendios y gestionar el caos."
@@ -33,7 +33,7 @@ const teamMembers = [
   
   { 
     name: "Timoteo", 
-    role: "Jefe de Seguridad", 
+    role: "Security Chief", 
     emoji: "🐶", 
     image: "/team/timoteo.png",
     description: "Ladra a los bugs y protege el servidor de intrusos."
@@ -41,21 +41,21 @@ const teamMembers = [
   
   { 
     name: "Tomi", 
-    role: "Gamer", 
+    role: "Private Beta Tester", 
     emoji: "💻", 
     image: "/team/tomi.png",
     description: "Nacido con un teclado en la mano. Testea la jugabilidad hasta el límite."
   },
   { 
     name: "Laucha", 
-    role: "Lider Técnico", 
+    role: "Architect & Lead Developer", 
     emoji: "🛠️", 
     image: "/team/laucha.png",
     description: "El arquitecto del código. Convierte café en software robusto y escalable."
   },
   { 
     name: "Pedro", 
-    role: "Soporte Emocional", 
+    role: "Emotional Support", 
     emoji: "🐱", 
     image: "/team/pedro.png",
     description: "Experto en control de calidad (siestas sobre el teclado). Juzga tu código con la mirada."
