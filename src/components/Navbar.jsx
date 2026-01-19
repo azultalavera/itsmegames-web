@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'Historia', href: '#story' },
   { name: 'Stream', href: '#stream' },
   { name: 'Equipo', href: '#team' },
+  { name: 'Aliados', href: '#sponsors' }, // <--- AGREGADO AQUÍ
 ];
 
 const Navbar = () => {
@@ -32,7 +33,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <a href="#home" className="flex items-center space-x-2 group">
-          {/* Puedes reemplazar esto con tu imagen de logo real */}
           <div className="w-10 h-10 bg-neon rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.8)] transition-shadow overflow-hidden">
             <img src="/IMG.png" alt="ItsMeGames Logo" className="w-full h-full object-cover" />
           </div>
