@@ -44,15 +44,15 @@ const SponsorCard = ({ sponsor, index }) => {
         >
           <div className="bg-cardbg/90 backdrop-blur-xl p-4 rounded-2xl h-full flex flex-col items-center text-center relative overflow-hidden">
             {/* Efecto de brillo al hacer hover */}
-            <div className={`absolute inset-0 bg-neon/10 blur-[80px] transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
+            <div className={`absolute inset-0 bg-neon/20 blur-[100px] transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
             
-            <div className="relative mb-4 rounded-full p-1 bg-gradient-to-br from-neon to-purple-500 mt-6">
-              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-black border-4 border-darkbg flex items-center justify-center overflow-hidden relative p-2">
-                {/* NOTA: Usamos object-contain para que el logo se vea entero y no recortado */}
+            <div className="relative mb-4 rounded-full p-1 bg-gradient-to-br from-neon to-purple-500 mt-4">
+              {/* VOLVIMOS AL ESTILO ORIGINAL DEL TEAM (bg-darkbg y object-cover) */}
+              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-darkbg border-4 border-darkbg flex items-center justify-center overflow-hidden relative">
                 <img 
                   src={sponsor.image} 
                   alt={sponsor.name} 
-                  className={`w-full h-full object-contain filter drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
+                  className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`}
                 />
               </div>
             </div>
@@ -60,7 +60,7 @@ const SponsorCard = ({ sponsor, index }) => {
             <h3 className="text-lg lg:text-xl text-white font-bold mb-1 truncate w-full">{sponsor.name}</h3>
             {sponsor.tier && <p className="text-xs lg:text-sm text-neon font-Inter uppercase tracking-wider">{sponsor.tier}</p>}
             
-            <div className="absolute bottom-3 text-[10px] text-gray-500 uppercase tracking-widest group-hover:text-neon transition-colors">Click para info</div>
+            <div className="absolute bottom-3 text-[10px] text-neon/50 uppercase tracking-widest animate-pulse">Click info</div>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ const SponsorCard = ({ sponsor, index }) => {
           className="absolute inset-0 backface-hidden rounded-2xl p-[2px] bg-gradient-to-b from-purple-500 to-neon/50"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }} 
         >
-          <div className="bg-black/95 backdrop-blur-xl p-6 rounded-2xl h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
+          <div className="bg-black/90 backdrop-blur-xl p-6 rounded-2xl h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon to-purple-500"></div>
             
             <h3 className="text-xl text-neon font-Orbitron font-bold mb-3">{sponsor.name}</h3>
@@ -77,8 +77,8 @@ const SponsorCard = ({ sponsor, index }) => {
               "{sponsor.description}"
             </p>
             
-            {/* Icono decorativo o botón simulado */}
-            <div className="mt-4 text-purple-400 text-2xl animate-pulse">
+            {/* Icono decorativo */}
+            <div className="mt-4 text-purple-400 text-2xl">
               🤝
             </div>
           </div>
@@ -101,7 +101,7 @@ const Sponsors = () => {
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">Marcas que potencian nuestro desarrollo.</p>
       </motion.div>
 
-      {/* Grid responsiva igual al Team */}
+      {/* Grid idéntica a Team */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto">
         {sponsorsList.map((sponsor, index) => (
           <SponsorCard key={sponsor.name} sponsor={sponsor} index={index} />
