@@ -4,6 +4,7 @@ import About from './components/About';
 import Layer8Reveal from './components/Layer8Reveal'; // <--- IMPORTANTE
 import Stream from './components/Stream';
 import Team from './components/Team';
+import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
 
 function App() {
@@ -34,6 +35,12 @@ function App() {
         <section id="team" className="scroll-mt-28">
            <Team />
         </section>
+
+        {/* SECCIÓN DE PATROCINADORES */}
+        <section id="sponsors" className="scroll-mt-28">
+          <Sponsors />
+        </section>
+        
       </main>
 
       <Footer />
