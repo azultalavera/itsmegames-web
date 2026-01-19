@@ -10,10 +10,12 @@
   --neon-purple: #d946ef;
 }
 
+
 body {
-  /* Fondo base con un degradado sutil */
   @apply bg-gradient-to-br from-darkbg to-[#0a0a0a] text-gray-200 font-Inter overflow-x-hidden min-h-screen;
 }
+
+
 
 /* Utilidad para textos que brillan */
 .text-glow {

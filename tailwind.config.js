@@ -13,7 +13,7 @@ export default {
       },
       colors: {
         neon: '#00FFFF',
-        darkbg: '#050b14',
+        darkbg: '#041f60',
         cardbg: '#1e293b', /* Slate 800 para las tarjetas */
       },
       backgroundImage: {

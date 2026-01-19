@@ -18,7 +18,7 @@ const clues = [
   {
     id: 3,
     label: "ENEMIGO",
-    secret: "UNKNOWN", // <--- CAMBIO AQUÍ
+    secret: "UNKNOWN",
     fake: "UNKNOWN ENTITY",
   },
 ];
@@ -68,7 +68,8 @@ const Layer8Reveal = () => {
   const [isTextHovered, setIsTextHovered] = useState(false);
 
   return (
-    <section className="relative w-full py-32 overflow-hidden bg-black border-y border-neon/20">
+    // CAMBIO AQUÍ: Reemplacé 'bg-black' por 'bg-darkbg'
+    <section className="relative w-full py-32 overflow-hidden bg-darkbg border-y border-neon/20">
       
       {/* --- FONDO ANIMADO --- */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -96,7 +97,6 @@ const Layer8Reveal = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-            {/* Cabecera centrada, el resto alineado a la izquierda */}
             <div className="flex items-center justify-center gap-2 mb-6">
                 <FileWarning className="text-neon animate-pulse w-5 h-5" />
                 <span className="text-neon font-mono text-sm tracking-widest">SYSTEM ALERT: ANOMALY DETECTED</span>
@@ -121,13 +121,11 @@ const Layer8Reveal = () => {
             </motion.h2>
           </div>
 
-          {/* --- TEXTO QUE SE REVELA (ALINEADO A LA IZQUIERDA Y CONSOLAS) --- */}
           <motion.div
             onMouseEnter={() => setIsTextHovered(true)}
             onMouseLeave={() => setIsTextHovered(false)}
             className="relative cursor-default mb-20 max-w-3xl mx-auto p-8 rounded-2xl transition-colors duration-500 hover:bg-white/5 border border-transparent hover:border-white/10"
           >
-            {/* CAMBIOS AQUI: font-['Consolas'] y text-left */}
             <div className={`font-['Consolas',_'monospace'] text-left text-base sm:text-lg md:text-xl leading-relaxed space-y-6 transition-all duration-500 ${
               isTextHovered ? 'text-gray-200 blur-0' : 'text-gray-500 blur-[3px]'
             }`}>
@@ -141,7 +139,7 @@ const Layer8Reveal = () => {
             
             {!isTextHovered && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-xs font-mono text-neon/50 uppercase tracking-widest bg-black/80 px-4 py-2 rounded border border-neon/20">
+                <span className="text-xs font-mono text-neon/50 uppercase tracking-widest bg-darkbg/80 px-4 py-2 rounded border border-neon/20">
                   HOVER TO DECRYPT MESSAGE
                 </span>
               </div>
