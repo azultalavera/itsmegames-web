@@ -7,7 +7,7 @@ const sponsorsList = [
     name: "Tito Barco", 
     tier: "Patrocinador Amigo", 
     image: "/sponsors/tito.png", // Asegúrate de tener estas imágenes
-    description: "Mejor afuera que adentro."
+    description: "Mueres siendo un hero o vives lo suficiente para verte convertido en villano."
   },
   { 
     name: "Franco Barco", 
