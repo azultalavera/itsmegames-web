@@ -11,17 +11,17 @@ const teamMembers = [
   },
   { 
     name: "Maxi", 
-    role: "CEO & Legal", 
+    role: "Co-Founder & Legal Department", 
     emoji: "⚖️",
     image: "/team/maxi.png",
     description: "La estratega de la operación. Asegura que el estudio cumpla con todos los protocolos del sistema."
   },
   { 
     name: "Azul", 
-    role: "Lider de Diseño UI/UX", 
+    role: "User Experience Lead", 
     emoji: "🎨", 
     image: "/team/azul.png",
-    description: "Arquitecta de interfaces. Fusiona los requerimientos puros del sistema con un diseño visual impactante."
+    description: "Arquitecta de interfaces. Fusiona los requisitos puros del sistema con un diseño visual impactante."
   },
   { 
     name: "Mamba", 
