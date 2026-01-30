@@ -47,13 +47,6 @@ const teamMembers = [
     description: "Nacido con un teclado en la mano. Testea la jugabilidad hasta el límite."
   },
   { 
-    name: "Laucha", 
-    role: "Architect & Lead Developer", 
-    emoji: "🛠️", 
-    image: "/team/laucha.png",
-    description: "El arquitecto del código. Convierte café en software robusto y escalable."
-  },
-  { 
     name: "Pedro", 
     role: "Emotional Support", 
     emoji: "🐱", 
