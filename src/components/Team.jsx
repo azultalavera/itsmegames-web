@@ -11,50 +11,25 @@ const teamMembers = [
   },
   { 
     name: "Maxi", 
-    role: "Co-Founder & Legal Department", 
+    role: "Co-Founder & Legal Advisor", // Actualizado
     emoji: "⚖️",
     image: "/team/maxi.png",
     description: "La estratega de la operación. Asegura que el estudio cumpla con todos los protocolos del sistema."
   },
   { 
     name: "Azul", 
-    role: "User Experience Lead", 
+    role: "UX Lead & Game Developer", // Actualizado
     emoji: "🎨", 
     image: "/team/azul.png",
-    description: "Arquitecta de interfaces. Fusiona los requisitos puros del sistema con un diseño visual impactante."
+    description: "Arquitecta de interfaces y desarrolladora. Fusiona los requisitos del sistema con un diseño visual impactante."
   },
   { 
-    name: "Mamba", 
-    role: "Community Lead", 
-    emoji: "💼", 
-    image: "/team/mamba.png",
-    description: "Mantiene al equipo enfocado. Experta en apagar incendios y gestionar el caos."
-  },
-  
-  { 
-    name: "Timoteo", 
-    role: "Security Chief", 
-    emoji: "🐶", 
-    image: "/team/timoteo.png",
-    description: "Ladra a los bugs y protege el servidor de intrusos."
-  },
-  
-  { 
-    name: "Tomi", 
-    role: "Private Beta Tester", 
+    name: "Fran", 
+    role: "Tech Lead", // Nuevo Integrante
     emoji: "💻", 
-    image: "/team/tomi.png",
-    description: "Nacido con un teclado en la mano. Testea la jugabilidad hasta el límite."
-  },
-  { 
-    name: "Pedro", 
-    role: "Emotional Support", 
-    emoji: "🐱", 
-    image: "/team/pedro.png",
-    description: "Experto en control de calidad (siestas sobre el teclado). Juzga tu código con la mirada."
-  },
-  // --- NUEVO INTEGRANTE: TIMOTEO ---
-  
+    image: "/team/fran.jpg", // Asegúrate de tener esta imagen
+    description: "El arquitecto del código. Lidera la tecnología para llevar el rendimiento al siguiente nivel."
+  }
 ];
 
 const TeamCard = ({ member, index }) => {
@@ -132,8 +107,7 @@ const Team = () => {
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">El equipo detrás de la magia.</p>
       </motion.div>
 
-      {/* AJUSTE DE GRILLA: lg:grid-cols-4 crea 2 filas de 4 personas. Queda perfecto y simétrico. */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto justify-center">
         {teamMembers.map((member, index) => (
           <TeamCard key={member.name} member={member} index={index} />
         ))}

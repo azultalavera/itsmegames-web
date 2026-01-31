@@ -1,19 +1,31 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// --- DATOS DE EJEMPLO (Reemplaza con tus imágenes reales) ---
+// --- DATOS DE SPONSORS ---
 const sponsorsList = [
   { 
+    name: "Mamba", 
+    tier: "Community Partner", 
+    image: "/team/mamba.png", // Usando la imagen que tenía en Team
+    description: "Mantiene al equipo enfocado. Experta en gestionar el caos y apagar incendios."
+  },
+  { 
+    name: "Tomi", 
+    tier: "Beta Tester Partner", 
+    image: "/team/tomi.png", // Usando la imagen que tenía en Team
+    description: "Nacido con un teclado en la mano. Testea la jugabilidad hasta el límite."
+  },
+  { 
     name: "Tito Barco", 
-    tier: "Patrocinador Amigo", 
-    image: "/sponsors/tito.png", // Asegúrate de tener estas imágenes
-    description: "Mueres siendo un hero o vives lo suficiente para verte convertido en villano."
+    tier: "Investor", 
+    image: "/sponsors/tito.png", 
+    description: "Mueres siendo un héroe o vives lo suficiente para verte convertido en villano."
   },
   { 
     name: "Franco Barco", 
-    tier: "Patrocinador Amigo", 
+    tier: "Investor", 
     image: "/sponsors/franco.png",
-    description: "Tenes que ser bueno en el mano a mano."
+    description: "Tenés que ser bueno en el mano a mano."
   },
 ];
 
@@ -47,7 +59,6 @@ const SponsorCard = ({ sponsor, index }) => {
             <div className={`absolute inset-0 bg-neon/20 blur-[100px] transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
             
             <div className="relative mb-4 rounded-full p-1 bg-gradient-to-br from-neon to-purple-500 mt-4">
-              {/* VOLVIMOS AL ESTILO ORIGINAL DEL TEAM (bg-darkbg y object-cover) */}
               <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-darkbg border-4 border-darkbg flex items-center justify-center overflow-hidden relative">
                 <img 
                   src={sponsor.image} 
@@ -98,11 +109,11 @@ const Sponsors = () => {
         className="text-center mb-12"
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">ALIADOS</h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">Marcas que potencian nuestro desarrollo.</p>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">Marcas y amigos que potencian nuestro desarrollo.</p>
       </motion.div>
 
       {/* Grid idéntica a Team */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto justify-center">
         {sponsorsList.map((sponsor, index) => (
           <SponsorCard key={sponsor.name} sponsor={sponsor} index={index} />
         ))}
