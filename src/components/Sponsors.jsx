@@ -108,8 +108,8 @@ const Sponsors = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">ALIADOS</h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">Marcas y amigos que potencian nuestro desarrollo.</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">COMUNIDAD</h2>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">Amigos que potencian nuestro desarrollo.</p>
       </motion.div>
 
       {/* Grid idéntica a Team */}

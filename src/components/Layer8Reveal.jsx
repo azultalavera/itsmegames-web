@@ -6,19 +6,19 @@ const clues = [
   {
     id: 1,
     label: "GÉNERO",
-    secret: "Action Roguelite",
+    secret: "Twin-Stick RogueLite", // CAMBIO
     fake: "CORRUPTED SECTOR",
   },
   {
     id: 2,
     label: "OBJETIVO",
-    secret: "Proteger al Capitán",
+    secret: "Purgar el sistema", // CAMBIO
     fake: "PROTOCOL 00-KILL",
   },
   {
     id: 3,
     label: "ENEMIGO",
-    secret: "UNKNOWN",
+    secret: "UNKNOWN", // SIN CAMBIO
     fake: "UNKNOWN ENTITY",
   },
 ];
@@ -68,7 +68,6 @@ const Layer8Reveal = () => {
   const [isTextHovered, setIsTextHovered] = useState(false);
 
   return (
-    // CAMBIO AQUÍ: Reemplacé 'bg-black' por 'bg-darkbg'
     <section className="relative w-full py-32 overflow-hidden bg-darkbg border-y border-neon/20">
       
       {/* --- FONDO ANIMADO --- */}

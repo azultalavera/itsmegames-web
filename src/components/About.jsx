@@ -17,7 +17,7 @@ const milestones = [
   {
     year: '2026+',
     title: 'Evolución a Estudio',
-    description: 'Descubrimos que nuestra verdadera pasión es crear. Nacimos como empresa de desarrollo de videojuegos y sistemas.',
+    description: 'Descubrimos que nuestra verdadera pasión es crear. Nacimos como empresa de desarrollo de videojuegos, listos para dejar nuestra marca en la industria.',
     icon: Rocket,
   },
 ];

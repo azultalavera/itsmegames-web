@@ -6,7 +6,7 @@ const navLinks = [
   { name: 'Inicio', href: '#home' },
   { name: 'Historia', href: '#story' },
   { name: 'Equipo', href: '#team' },
-  { name: 'Aliados', href: '#sponsors' },
+  { name: 'Comunidad', href: '#sponsors' },
 ];
 
 const Navbar = () => {
