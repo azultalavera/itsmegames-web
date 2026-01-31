@@ -5,9 +5,8 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: 'Inicio', href: '#home' },
   { name: 'Historia', href: '#story' },
-  { name: 'Stream', href: '#stream' },
   { name: 'Equipo', href: '#team' },
-  { name: 'Aliados', href: '#sponsors' }, // <--- AGREGADO AQUÍ
+  { name: 'Aliados', href: '#sponsors' },
 ];
 
 const Navbar = () => {
