@@ -1,8 +1,8 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Layer8Reveal from './components/Layer8Reveal'; // <--- IMPORTANTE
-import Stream from './components/Stream';
+import Layer8Reveal from './components/Layer8Reveal';
+// Borramos el import de Stream
 import Team from './components/Team';
 import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
@@ -28,9 +28,7 @@ function App() {
            <About />
         </section>
 
-        <section id="stream" className="scroll-mt-28">
-           <Stream />
-        </section>
+        {/* Aquí estaba Stream, ya lo sacamos */}
 
         <section id="team" className="scroll-mt-28">
            <Team />
