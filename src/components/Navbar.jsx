@@ -52,14 +52,6 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
-          <a
-            href="https://www.twitch.tv/itsmegames_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 bg-neon/10 text-neon border border-neon/50 rounded-full font-Orbitron text-sm font-bold hover:bg-neon hover:text-darkbg hover:border-neon transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,255,0.6)]"
-          >
-            VER LIVE
-          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -87,15 +79,6 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-           <a
-            href="https://www.twitch.tv/itsmegames_"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="block w-full text-center px-6 py-3 bg-neon/20 text-neon border border-neon/50 rounded-full font-Orbitron font-bold"
-          >
-            VER LIVE EN TWITCH
-          </a>
         </motion.div>
       )}
     </motion.nav>
