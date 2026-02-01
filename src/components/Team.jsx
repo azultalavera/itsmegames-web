@@ -8,7 +8,7 @@ const teamMembers = [
     role: "Founder & Game Director", 
     emoji: "🎮", 
     image: "/team/brunito.png",
-    description: "El cerebro detrás de todo. Fanático de los RPGs y de romper el código hasta que funcione."
+    description: "El cerebro detrás de todo. Fanático de los videojuegos y de vivir nuevas aventuras."
   },
   { 
     name: "Maxi", 
@@ -29,7 +29,7 @@ const teamMembers = [
     name: "Fran", 
     role: "Tech Lead", 
     emoji: "💻", 
-    image: "/team/fran.png",
+    image: "/team/fran.jpg",
     description: "El arquitecto del código. Lidera la tecnología para llevar el rendimiento al siguiente nivel."
   },
   { 
