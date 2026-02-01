@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const teamMembers = [
+  // --- FILA 1 (2 Personas) ---
   { 
     name: "Brunito", 
     role: "Founder & Game Director", 
@@ -11,24 +12,32 @@ const teamMembers = [
   },
   { 
     name: "Maxi", 
-    role: "Co-Founder & Legal Advisor", // Actualizado
+    role: "Legal & Community Manager", 
     emoji: "⚖️",
     image: "/team/maxi.png",
-    description: "La estratega de la operación. Asegura que el estudio cumpla con todos los protocolos del sistema."
+    description: "Cuida nuestras espaldas legales y mantiene viva la llama de la comunidad."
   },
+  // --- FILA 2 (3 Personas) ---
   { 
     name: "Azul", 
-    role: "UX Lead & Game Developer", // Actualizado
+    role: "UX Lead & Game Developer", 
     emoji: "🎨", 
     image: "/team/azul.png",
-    description: "Arquitecta de interfaces y desarrolladora. Fusiona los requisitos del sistema con un diseño visual impactante."
+    description: "Arquitecta de interfaces. Fusiona los requisitos del sistema con un diseño visual impactante."
   },
   { 
     name: "Fran", 
-    role: "Tech Lead", // Nuevo Integrante
+    role: "Tech Lead", 
     emoji: "💻", 
-    image: "/team/fran.jpg", // Asegúrate de tener esta imagen
+    image: "/team/fran.png",
     description: "El arquitecto del código. Lidera la tecnología para llevar el rendimiento al siguiente nivel."
+  },
+  { 
+    name: "Lucas", 
+    role: "Lead Artist", 
+    emoji: "🖌️", 
+    image: "/team/lucas.png",
+    description: "Fanático de los videojuegos. Dibuja con el corazón; su pasión es jugar y divertirse."
   }
 ];
 
@@ -38,7 +47,7 @@ const TeamCard = ({ member, index }) => {
 
   return (
     <div 
-      className="relative h-[280px] w-full perspective-1000 cursor-pointer group"
+      className="relative h-[280px] w-full max-w-[300px] perspective-1000 cursor-pointer group mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsFlipped(!isFlipped)}
@@ -95,6 +104,10 @@ const TeamCard = ({ member, index }) => {
 };
 
 const Team = () => {
+  // Dividimos el array: los primeros 2 para la fila de arriba, el resto para abajo
+  const topRow = teamMembers.slice(0, 2);
+  const bottomRow = teamMembers.slice(2);
+
   return (
     <section className="relative w-full">
       <motion.div 
@@ -107,10 +120,27 @@ const Team = () => {
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">El equipo detrás de la magia.</p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 max-w-[1400px] mx-auto justify-center">
-        {teamMembers.map((member, index) => (
-          <TeamCard key={member.name} member={member} index={index} />
-        ))}
+      <div className="max-w-[1200px] mx-auto px-4 flex flex-col gap-8">
+        
+        {/* --- FILA 1: 2 Personas (Centrado) --- */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+          {topRow.map((member, index) => (
+            <div key={member.name} className="w-full sm:w-[300px]">
+              <TeamCard member={member} index={index} />
+            </div>
+          ))}
+        </div>
+
+        {/* --- FILA 2: 3 Personas (Centrado) --- */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {bottomRow.map((member, index) => (
+            <div key={member.name} className="w-full sm:w-[300px]">
+              {/* Sumamos el index para que el delay de animación sea progresivo (2, 3, 4...) */}
+              <TeamCard member={member} index={index + 2} />
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
