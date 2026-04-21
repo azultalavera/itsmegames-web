@@ -9,7 +9,7 @@ const sponsorsList = [
     name: "UTN FRC",
     tier: "Socio Académico",
     image: utnLogo,
-    description: "Universidad Tecnológica Nacional - Facultad Regional Reconquista. Impulsando la innovación técnica y formación profesional."
+    description: "Universidad Tecnológica Nacional - Facultad Regional Córdoba. Impulsando la innovación técnica y formación profesional."
   },
   {
     name: "Lanas Córdoba",
