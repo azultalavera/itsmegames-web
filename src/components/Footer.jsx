@@ -5,8 +5,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Twitch, href: 'https://twitch.tv/itsmegames_', label: 'Twitch' },
-    { icon: Youtube, href: 'https://www.youtube.com/@itsmegames_', label: 'YouTube' },
     { icon: Instagram, href: 'https://www.instagram.com/itsmegames_/', label: 'Instagram' },
   ];
 
@@ -56,6 +54,27 @@ const Footer = () => {
             ))}
           </motion.div>
         </div>
+
+        {/* Contact Info - Chiquito */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-12 pt-8 border-t border-white/5 flex flex-col items-center text-center space-y-2"
+        >
+          <p className="text-[10px] font-Orbitron font-bold text-gray-500 tracking-[0.2em] uppercase">
+            BRUNO ARESU BARELLA - <span className="text-neon">FOUNDER</span>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-mono text-gray-500">
+            <a href="mailto:bruno.aresubarella@itsmegames.com" className="hover:text-neon transition-colors flex items-center gap-2">
+              <span className="text-neon/50">EMAIL:</span> bruno.aresubarella@itsmegames.com
+            </a>
+            <a href="tel:+5493512133660" className="hover:text-neon transition-colors flex items-center gap-2">
+              <span className="text-neon/50">TEL:</span> +54 9 3512 13-3660
+            </a>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

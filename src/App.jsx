@@ -1,15 +1,16 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Layer8Reveal from './components/Layer8Reveal';
 // Borramos el import de Stream
 import Team from './components/Team';
 import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
+import GamesInDev from './components/GamesInDev';
 
 function App() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-darkbg">
+      <div className="absolute inset-0 bg-[url('/grid.jpg')] bg-repeat opacity-10 pointer-events-none mix-blend-overlay"></div>
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ opacity: 0.1, pointerEvents: 'none', backgroundSize: '30px 30px' }}></div>
       
       <Navbar />
@@ -18,10 +19,9 @@ function App() {
         <section id="home">
            <Hero />
         </section>
-        
-        {/* SECCIÓN ÉPICA DE REVELACIÓN + PISTAS */}
-        <section id="project" className="scroll-mt-28">
-           <Layer8Reveal /> 
+
+        <section id="games" className="scroll-mt-28">
+           <GamesInDev />
         </section>
 
         <section id="story" className="scroll-mt-28">

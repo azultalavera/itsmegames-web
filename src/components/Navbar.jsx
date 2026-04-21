@@ -4,9 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Inicio', href: '#home' },
+  { name: 'Juegos', href: '#games' },
   { name: 'Historia', href: '#story' },
   { name: 'Equipo', href: '#team' },
-  { name: 'Comunidad', href: '#sponsors' },
+  { name: 'Socios', href: '#sponsors' },
 ];
 
 const Navbar = () => {
