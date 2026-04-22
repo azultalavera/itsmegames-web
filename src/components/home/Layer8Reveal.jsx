@@ -103,7 +103,7 @@ const Layer8Reveal = () => {
 
           <div className="text-center mb-12">
             <a 
-              href="/layer8game" 
+              href="/#/layer8game" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block group"

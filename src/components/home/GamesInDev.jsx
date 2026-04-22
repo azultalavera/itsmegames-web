@@ -12,7 +12,7 @@ const games = [
     color: "from-cyan-500 to-blue-600",
     icon: <img src={layer8Logo} alt="Layer 8 Logo" className="w-full h-full object-contain" />,
     tags: ["Action", "RogueLite", "Cyberpunk"],
-    url: "/layer8game"
+    url: "/#/layer8game"
   }
 ];
 
