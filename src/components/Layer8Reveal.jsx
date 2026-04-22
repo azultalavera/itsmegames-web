@@ -103,11 +103,8 @@ const Layer8Reveal = () => {
 
           <div className="text-center mb-12">
             <a 
-<<<<<<< HEAD:src/components/home/Layer8Reveal.jsx
-              href="/#/layer8game" 
-=======
-              href="https://itsmegames.com/layer8game" 
->>>>>>> parent of 75003fc (landing layer 8 y mail):src/components/Layer8Reveal.jsx
+              href="/layer8game" 
+
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block group"
