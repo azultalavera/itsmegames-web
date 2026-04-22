@@ -79,13 +79,30 @@ const Layer8Landing = () => {
             <div className="flex items-center gap-3 mb-6">
               <TerminalIcon className="text-neon w-5 h-5" />
               <h2 className="text-xl font-Orbitron font-bold text-white uppercase tracking-wider">
-                Registro de Operativo
+                PROTOCOLO DE ACCESO
               </h2>
             </div>
 
-            <p className="text-gray-400 text-sm mb-8 font-mono leading-relaxed">
-              Introduce tu credencial (email) para recibir actualizaciones críticas y acceso anticipado al sistema.
-            </p>
+            <div className="bg-white/5 border border-neon/10 rounded-lg p-4 mb-8 font-mono text-[13px] relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-1 h-full bg-neon/40 shadow-[0_0_8px_rgba(0,255,255,0.4)]" />
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <span className="text-neon/50 shrink-0">></span>
+                  <p className="text-gray-300">No te quedes afuera de la red central.</p>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-neon/50 shrink-0">></span>
+                  <p className="text-gray-300">Dejanos tu mail para probar el juego antes que nadie y darnos una mano con el desarrollo.</p>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-neon/50 shrink-0">></span>
+                  <p className="text-gray-300">
+                    Queremos que seas parte de esta experiencia indie desde el día uno.
+                    <span className="inline-block w-1.5 h-3.5 bg-neon/50 ml-1 align-middle animate-pulse" />
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="relative">
