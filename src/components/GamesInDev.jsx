@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Gamepad2, Cpu, Layers, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import layer8Logo from '../assets/img/layer8.png';
 
 const games = [
@@ -25,7 +26,7 @@ const GameCard = ({ game, index }) => {
       whileHover={{ y: -10 }}
       className="relative group cursor-pointer"
     >
-      <a href={game.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+      <Link to={game.url} className="block h-full">
         <div className={`absolute -inset-0.5 bg-gradient-to-r ${game.color} opacity-20 group-hover:opacity-100 transition duration-500 blur-sm group-hover:blur-md`}></div>
 
         <div className="relative p-8 bg-darkbg border border-white/10 rounded-2xl h-full flex flex-col justify-between backdrop-blur-xl">
@@ -78,7 +79,7 @@ const GameCard = ({ game, index }) => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </motion.div>
   );
 };

@@ -16,27 +16,32 @@ const Layer8Landing = () => {
 
     setStatus('loading');
 
+    // URL de tu Google Apps Script (debes desplegarlo como Web App)
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4O5G-7UV4qWvlexNHH-hPW9n1PRMtrnxhZYt4sgClrKrQhOKPtBtd4i4g57HHk2Jnmw/exec';
+
     try {
-      const response = await fetch('/api/subscribe', {
+      // Usamos mode: 'no-cors' si el script de Google no maneja CORS correctamente, 
+      // pero lo ideal es manejarlo en el script.
+      const response = await fetch(SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors', // Importante para Google Apps Script desde el navegador
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          name, 
-          email, 
-          timestamp: new Date().toISOString() 
+        body: JSON.stringify({
+          name,
+          email,
+          timestamp: new Date().toLocaleString()
         }),
       });
 
-      if (response.ok) {
-        setStatus('success');
-        setMessage('ACCESO CONCEDIDO. Has sido incluido en la lista de purga.');
-        setName('');
-        setEmail('');
-      } else {
-        throw new Error('Falló el registro');
-      }
+      // Con no-cors no podemos ver el body de la respuesta, 
+      // así que asumimos éxito si no hay excepción.
+      setStatus('success');
+      setMessage('ACCESO CONCEDIDO. Has sido incluido en la lista de interesados.');
+      setName('');
+      setEmail('');
+
     } catch (err) {
       setStatus('error');
       setMessage('ERROR DE SISTEMA. Inténtalo de nuevo más tarde.');
@@ -48,12 +53,12 @@ const Layer8Landing = () => {
       {/* Fondos y Efectos */}
       <div className="absolute inset-0 bg-[url('/grid.jpg')] bg-repeat opacity-10 pointer-events-none mix-blend-overlay"></div>
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ opacity: 0.1, pointerEvents: 'none', backgroundSize: '30px 30px' }}></div>
-      
+
       <Navbar />
 
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-center">
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-6xl md:text-8xl font-Orbitron font-black text-white mb-12 text-center"
