@@ -87,15 +87,15 @@ const Layer8Landing = () => {
               <div className="absolute top-0 left-0 w-1 h-full bg-neon/40 shadow-[0_0_8px_rgba(0,255,255,0.4)]" />
               <div className="space-y-3">
                 <div className="flex gap-2">
-                  <span className="text-neon/50 shrink-0">></span>
+                  <span className="text-neon/50 shrink-0">{">"}</span>
                   <p className="text-gray-300">No te quedes afuera de la red central.</p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-neon/50 shrink-0">></span>
+                  <span className="text-neon/50 shrink-0">{">"}</span>
                   <p className="text-gray-300">Dejanos tu mail para probar el juego antes que nadie y darnos una mano con el desarrollo.</p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-neon/50 shrink-0">></span>
+                  <span className="text-neon/50 shrink-0">{">"}</span>
                   <p className="text-gray-300">
                     Queremos que seas parte de esta experiencia indie desde el día uno.
                     <span className="inline-block w-1.5 h-3.5 bg-neon/50 ml-1 align-middle animate-pulse" />
