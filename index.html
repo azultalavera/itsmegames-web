@@ -15,12 +15,6 @@
           window.history.replaceState(null, null,
               l.pathname.slice(0, (l.pathname.slice(-1) === '/' ? -1 : l.pathname.length)) + decoded + l.hash
           );
-        } else if (l.search.length > 1 && !l.search.includes('=') && !l.search.includes('~and~')) {
-          var path = l.search.slice(1);
-          if (path.indexOf('/') !== 0) path = '/' + path;
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, (l.pathname.slice(-1) === '/' ? -1 : l.pathname.length)) + path + l.hash
-          );
         }
       }(window.location))
     </script>
