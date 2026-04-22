@@ -1,0 +1,11 @@
+{
+  "emails": [
+    {
+      "name": "Azul",
+      "email": "azultalav@gmail.com",
+      "timestamp": "2026-04-22T14:00:16.385Z",
+      "id": "CHnjQO7mUOQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

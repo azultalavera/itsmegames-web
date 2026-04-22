@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Gamepad2, Cpu, Layers, Sparkles } from 'lucide-react';
-import layer8Logo from '../assets/img/layer8.png';
+import layer8Logo from '../../assets/img/layer8.png';
 
 const games = [
   {
@@ -12,7 +12,7 @@ const games = [
     color: "from-cyan-500 to-blue-600",
     icon: <img src={layer8Logo} alt="Layer 8 Logo" className="w-full h-full object-contain" />,
     tags: ["Action", "RogueLite", "Cyberpunk"],
-    url: "https://itsmegames.com/layer8game"
+    url: "/layer8game"
   }
 ];
 
