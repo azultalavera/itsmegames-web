@@ -5,6 +5,13 @@ import App from './App.jsx'
 import Layer8Landing from './components/Layer8Landing.jsx'
 import NotFound from './components/NotFound.jsx'
 import './index.css'
+import Clarity from '@microsoft/clarity'
+
+const clarityId = import.meta.env.VITE_CLARITY_ID;
+if (clarityId) {
+  Clarity.init(clarityId);
+}
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

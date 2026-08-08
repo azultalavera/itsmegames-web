@@ -40,9 +40,15 @@ const GameCard = ({ game, index }) => {
                   </span>
                 </div>
               </div>
-              <div className="w-full h-80 rounded-2xl bg-slate-50 text-brand-dark shadow-sm flex items-center justify-center border border-brand-green/10 overflow-hidden group-hover:border-brand-green/30 transition-colors">
+              <div className="w-full h-80 rounded-2xl bg-slate-50 text-brand-dark shadow-sm flex items-center justify-center border border-brand-green/10 overflow-hidden group-hover:border-brand-green/30 transition-colors relative">
                 <div className="w-full h-full p-8 transform group-hover:scale-110 transition-transform duration-700">
                   {game.icon}
+                </div>
+                {/* Hover overlay with CTA */}
+                <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="bg-white/95 text-brand-dark text-xs font-Fredoka font-bold py-2.5 px-5 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 tracking-wider">
+                    CLICK PARA ENTRAR
+                  </span>
                 </div>
               </div>
             </div>
@@ -64,18 +70,30 @@ const GameCard = ({ game, index }) => {
             </div>
           </div>
 
-          <div>
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Compilando...</span>
-              <span className="text-[10px] font-mono text-brand-dark">{game.progress}%</span>
+          <div className="flex flex-col gap-4">
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Compilando...</span>
+                <span className="text-[10px] font-mono text-brand-dark">{game.progress}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-brand-green/5 rounded-full overflow-hidden border border-brand-green/10">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${game.progress}%` }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className={`h-full bg-gradient-to-r ${game.color} shadow-[0_0_15px_rgba(24,122,52,0.2)]`}
+                />
+              </div>
             </div>
-            <div className="h-1.5 w-full bg-brand-green/5 rounded-full overflow-hidden border border-brand-green/10">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${game.progress}%` }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className={`h-full bg-gradient-to-r ${game.color} shadow-[0_0_15px_rgba(24,122,52,0.2)]`}
-              />
+
+            <div className="flex justify-center items-center gap-2 py-3 px-4 rounded-xl border border-brand-green/20 bg-brand-green/5 text-brand-green group-hover:bg-brand-green group-hover:text-white group-hover:border-brand-green group-hover:shadow-[0_0_15px_rgba(24,122,52,0.2)] transition-all duration-300 font-Fredoka font-bold text-xs tracking-wider">
+              <span>CLICK AQUÍ PARA VER</span>
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+              >
+                →
+              </motion.span>
             </div>
           </div>
         </div>
