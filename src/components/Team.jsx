@@ -63,14 +63,14 @@ const TeamCard = ({ member, index }) => {
       >
         {/* --- CARA FRONTAL --- */}
         <div
-          className="absolute inset-0 backface-hidden rounded-2xl p-[2px] bg-gradient-to-b from-neon/50 to-transparent"
+          className="absolute inset-0 backface-hidden rounded-2xl p-[2px] bg-gradient-to-b from-brand-green/40 to-brand-tan/20"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <div className="bg-cardbg/90 backdrop-blur-xl p-4 rounded-2xl h-full flex flex-col items-center text-center relative overflow-hidden">
-            <div className={`absolute inset-0 bg-neon/20 blur-[100px] transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
+          <div className="bg-cardbg backdrop-blur-xl p-4 rounded-2xl h-full flex flex-col items-center text-center relative overflow-hidden shadow-sm">
+            <div className={`absolute inset-0 bg-brand-green/5 blur-[100px] transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
 
-            <div className="relative mb-4 rounded-full p-1 bg-gradient-to-br from-neon to-purple-500 mt-4">
-              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-darkbg border-4 border-darkbg flex items-center justify-center overflow-hidden relative">
+            <div className="relative mb-4 rounded-full p-1 bg-gradient-to-br from-brand-green to-brand-tan mt-4 shadow-sm">
+              <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-white flex items-center justify-center overflow-hidden relative">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -79,23 +79,23 @@ const TeamCard = ({ member, index }) => {
               </div>
             </div>
 
-            <h3 className="text-lg lg:text-xl text-white font-bold mb-1 truncate w-full">{member.name}</h3>
-            {member.role && <p className="text-xs lg:text-sm text-gray-400 font-Inter">{member.role}</p>}
+            <h3 className="text-lg lg:text-xl text-brand-dark font-Fredoka font-bold mb-1 truncate w-full">{member.name}</h3>
+            {member.role && <p className="text-xs lg:text-sm text-brand-green font-Satoshi font-semibold">{member.role}</p>}
 
-            <div className="absolute bottom-3 text-[10px] text-neon/50 uppercase tracking-widest animate-pulse">Click info</div>
+            <div className="absolute bottom-3 text-[10px] text-brand-green/80 font-Fredoka font-semibold tracking-wider animate-pulse">Ver Info</div>
           </div>
         </div>
 
         {/* --- CARA TRASERA --- */}
         <div
-          className="absolute inset-0 backface-hidden rounded-2xl p-[2px] bg-gradient-to-b from-purple-500 to-neon/50"
+          className="absolute inset-0 backface-hidden rounded-2xl p-[2px] bg-gradient-to-b from-brand-tan to-brand-green/40"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <div className="bg-black/90 backdrop-blur-xl p-6 rounded-2xl h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon to-purple-500"></div>
-            <h3 className="text-xl text-neon font-Orbitron font-bold mb-3">{member.name}</h3>
-            <p className="text-gray-300 text-sm font-Inter leading-relaxed">"{member.description}"</p>
-            <div className="mt-4 text-purple-400 text-2xl">{member.emoji}</div>
+          <div className="bg-white border border-brand-green/10 backdrop-blur-xl p-6 rounded-2xl h-full flex flex-col items-center justify-center text-center relative overflow-hidden shadow-sm">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green to-brand-tan"></div>
+            <h3 className="text-xl text-brand-green font-Fredoka font-bold mb-3">{member.name}</h3>
+            <p className="text-gray-600 text-sm font-Satoshi leading-relaxed">"{member.description}"</p>
+            <div className="mt-4 text-2xl">{member.emoji}</div>
           </div>
         </div>
       </motion.div>
@@ -116,8 +116,8 @@ const Team = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow">LA FAMILIA</h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">El equipo detrás de la magia.</p>
+        <h2 className="text-4xl md:text-5xl font-Fredoka font-black mb-4 text-brand-dark text-glow uppercase tracking-normal">La Familia</h2>
+        <p className="text-xl font-Satoshi text-gray-600 max-w-2xl mx-auto">El equipo detrás de la magia.</p>
       </motion.div>
 
       <div className="max-w-[1200px] mx-auto px-4 flex flex-col gap-8">

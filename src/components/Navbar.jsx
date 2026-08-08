@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoPerro from '../assets/img/logo-perro.png';
 
 const navLinks = [
   { name: 'Inicio', href: '/#home' },
@@ -27,16 +28,16 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-darkbg/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+        scrolled ? 'bg-darkbg/90 backdrop-blur-md border-b border-brand-green/10 py-4 shadow-sm' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <a href="/#home" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-neon rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.8)] transition-shadow overflow-hidden">
-            <img src="/IMG.png" alt="ItsMeGames Logo" className="w-full h-full object-cover" />
+        <a href="/#home" className="flex items-center space-x-3 group">
+          <div className="w-12 h-12 bg-white border border-brand-green/20 rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(24,122,52,0.1)] group-hover:shadow-[0_4px_18px_rgba(24,122,52,0.25)] transition-all duration-300 overflow-hidden p-1.5">
+            <img src={logoPerro} alt="ItsMeGames Logo" className="w-full h-full object-contain animate-float" />
           </div>
-          <span className="text-2xl font-bold font-Orbitron text-white group-hover:text-neon transition-colors">
+          <span className="text-2xl font-bold font-Fredoka tracking-wide text-brand-dark group-hover:text-brand-green transition-colors">
             ItsMeGames
           </span>
         </a>
@@ -47,17 +48,20 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="font-Orbitron text-sm uppercase tracking-wider text-gray-300 hover:text-neon transition-colors relative group py-2"
+              className="font-Fredoka text-[15px] font-medium tracking-wide text-gray-700 hover:text-brand-green transition-colors relative group py-2"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-green to-brand-tan group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-neon">
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="text-brand-dark hover:text-brand-green transition-colors p-1.5 rounded-lg focus:outline-none"
+          >
             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
         </div>
@@ -68,14 +72,14 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 right-0 bg-darkbg/95 backdrop-blur-lg border-b border-white/10 py-4 px-4 flex flex-col space-y-4 shadow-xl"
+          className="md:hidden absolute top-full left-0 right-0 bg-white/95 border-b border-brand-green/10 py-6 px-4 flex flex-col space-y-4 shadow-xl backdrop-blur-xl"
         >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="font-Orbitron text-lg text-gray-300 hover:text-neon transition-colors block py-2 text-center"
+              className="font-Fredoka text-lg text-gray-700 hover:text-brand-green transition-colors block py-2 text-center"
             >
               {link.name}
             </a>
