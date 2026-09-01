@@ -1,0 +1,60 @@
+/* Satoshi no está en Google Fonts, así que sigue viniendo de Fontshare;
+   el resto de las tipografías las carga next/font en app/layout.tsx. */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+@import 'tailwindcss';
+
+/* Traducción 1:1 del theme.extend del tailwind.config.js de la versión Vite. */
+@theme {
+  --color-neon: #187a34; /* Brand Green primary */
+  --color-darkbg: #ffffff; /* Pure white background */
+  --color-cardbg: #ffffff; /* Clean white card background */
+  --color-brand-green: #187a34;
+  --color-brand-red: #e83f41;
+  --color-brand-brown: #b2783f;
+  --color-brand-tan: #e2a665;
+  --color-brand-dark: #222222;
+  --color-brand-light: #efefef;
+
+  --font-fredoka: var(--next-font-fredoka), sans-serif;
+  --font-inter: var(--next-font-inter), sans-serif;
+  --font-orbitron: var(--next-font-orbitron), sans-serif;
+  --font-sharetech: var(--next-font-sharetech), monospace;
+  --font-vt323: var(--next-font-vt323), monospace;
+  --font-satoshi: 'Satoshi', sans-serif;
+
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+/* Variables CSS para la marca */
+:root {
+  --neon-cyan: #187a34; /* Verde de marca */
+  --neon-purple: #e2a665; /* Arena / Marrón claro */
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-darkbg),
+    var(--color-white, #fff)
+  );
+  color: var(--color-brand-dark);
+  font-family: var(--font-satoshi);
+}
+
+/* Utilidad para textos en modo claro */
+.text-glow {
+  text-shadow: 0 1px 2px rgba(24, 122, 52, 0.1);
+}
+
+/* Clase para títulos principales */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-fredoka);
+  letter-spacing: var(--tracking-wide);
+}
