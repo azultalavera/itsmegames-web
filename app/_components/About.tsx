@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { milestones, type Milestone } from '@/lib/data/milestones';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface MilestoneCardProps {
   milestone: Milestone;
@@ -9,7 +10,13 @@ interface MilestoneCardProps {
 }
 
 function MilestoneCard({ milestone, index }: MilestoneCardProps) {
+  const { t } = useLanguage();
   const Icon = milestone.icon;
+  const translation =
+    t.about.milestones.find((m) => m.year === milestone.year) || t.about.milestones[index];
+  const title = translation?.title || milestone.title;
+  const description = translation?.description || milestone.description;
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
@@ -30,10 +37,10 @@ function MilestoneCard({ milestone, index }: MilestoneCardProps) {
           {milestone.year}
         </span>
         <h3 className="text-2xl font-fredoka font-bold mb-2 text-brand-dark group-hover:text-brand-green transition-colors">
-          {milestone.title}
+          {title}
         </h3>
         <p className="text-gray-600 font-satoshi leading-relaxed text-sm md:text-base">
-          {milestone.description}
+          {description}
         </p>
       </div>
     </motion.div>
@@ -41,6 +48,8 @@ function MilestoneCard({ milestone, index }: MilestoneCardProps) {
 }
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative">
       <motion.div
@@ -50,10 +59,10 @@ export default function About() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-fredoka font-black mb-4 text-brand-dark text-glow uppercase tracking-normal">
-          Nuestra Evolución
+          {t.about.title}
         </h2>
         <p className="text-xl font-satoshi text-gray-600 max-w-2xl mx-auto">
-          El viaje de un hobby a un estudio creativo.
+          {t.about.subtitle}
         </p>
       </motion.div>
 

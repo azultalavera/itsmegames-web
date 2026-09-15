@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { sponsors, type Sponsor } from '@/lib/data/sponsors';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface SponsorCardProps {
   sponsor: Sponsor;
@@ -13,6 +14,11 @@ interface SponsorCardProps {
 function SponsorCard({ sponsor, index }: SponsorCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
+
+  const partnerTranslation = t.sponsors.partners[sponsor.name];
+  const tier = partnerTranslation?.tier || sponsor.tier;
+  const description = partnerTranslation?.description || sponsor.description;
 
   return (
     <div
@@ -58,14 +64,14 @@ function SponsorCard({ sponsor, index }: SponsorCardProps) {
             <h3 className="text-lg lg:text-xl text-brand-dark font-bold mb-1 truncate w-full font-fredoka">
               {sponsor.name}
             </h3>
-            {sponsor.tier && (
+            {tier && (
               <p className="text-[10px] text-brand-green font-fredoka font-semibold uppercase tracking-[0.2em]">
-                {sponsor.tier}
+                {tier}
               </p>
             )}
 
             <div className="absolute bottom-3 text-[10px] text-brand-green/80 uppercase tracking-[0.3em] animate-pulse font-fredoka">
-              Info del Socio
+              {t.sponsors.viewInfo}
             </div>
           </div>
         </div>
@@ -82,7 +88,7 @@ function SponsorCard({ sponsor, index }: SponsorCardProps) {
               {sponsor.name}
             </h3>
             <p className="text-gray-600 text-xs font-satoshi leading-relaxed">
-              {sponsor.description}
+              {description}
             </p>
 
             {/* Icono decorativo */}
@@ -99,6 +105,8 @@ function SponsorCard({ sponsor, index }: SponsorCardProps) {
 }
 
 export default function Sponsors() {
+  const { t } = useLanguage();
+
   return (
     <section id="sponsors" className="relative w-full py-8 md:py-12 px-4">
       <motion.div
@@ -109,18 +117,17 @@ export default function Sponsors() {
       >
         <div className="inline-block px-3 py-1 rounded-full border border-brand-green/20 bg-brand-green/10 mb-4">
           <span className="text-[10px] text-brand-green font-fredoka font-semibold uppercase tracking-wider">
-            Alianzas
+            {t.sponsors.badge}
           </span>
         </div>
         <h2 className="text-4xl md:text-6xl font-fredoka font-black text-brand-dark mb-4 tracking-normal uppercase">
-          Socios{' '}
+          {t.sponsors.titlePre}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-brand-tan text-glow">
-            Estratégicos
+            {t.sponsors.titleHighlight}
           </span>
         </h2>
         <p className="text-gray-600 font-satoshi text-sm max-w-2xl mx-auto">
-          Colaborando con instituciones y empresas líderes para expandir los límites del
-          entretenimiento digital.
+          {t.sponsors.subtitle}
         </p>
       </motion.div>
 

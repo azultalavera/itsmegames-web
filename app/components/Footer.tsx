@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import logoPerro from '@/public/brand/logo-perro.png';
 
 interface SocialLink {
@@ -12,6 +13,7 @@ interface SocialLink {
 }
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const socialLinks: SocialLink[] = [
@@ -81,21 +83,21 @@ export default function Footer() {
           className="mt-12 pt-8 border-t border-brand-green/10 flex flex-col items-center text-center space-y-2"
         >
           <p className="text-[10px] font-fredoka font-bold text-gray-500 tracking-wider uppercase">
-            BRUNO ARESU BARELLA - <span className="text-brand-green">FOUNDER</span>
+            BRUNO ARESU BARELLA - <span className="text-brand-green">{t.footer.founderRole}</span>
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-satoshi text-gray-600">
             <a
               href="mailto:bruno.aresubarella@itsmegames.com"
               className="hover:text-brand-green transition-colors flex items-center gap-2"
             >
-              <span className="text-brand-green font-semibold">EMAIL:</span>
+              <span className="text-brand-green font-semibold">{t.footer.emailLabel}</span>
               bruno.aresubarella@itsmegames.com
             </a>
             <a
               href="tel:+5493512133660"
               className="hover:text-brand-green transition-colors flex items-center gap-2"
             >
-              <span className="text-brand-green font-semibold">TEL:</span> +54 9 3512 13-3660
+              <span className="text-brand-green font-semibold">{t.footer.telLabel}</span> +54 9 3512 13-3660
             </a>
           </div>
         </motion.div>

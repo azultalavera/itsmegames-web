@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { teamMembers, type TeamMember } from '@/lib/data/team';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface TeamCardProps {
   member: TeamMember;
@@ -13,6 +14,11 @@ interface TeamCardProps {
 function TeamCard({ member, index }: TeamCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
+
+  const memberTranslation = t.team.members[member.name];
+  const role = memberTranslation?.role || member.role;
+  const description = memberTranslation?.description || member.description;
 
   return (
     <div
@@ -59,14 +65,14 @@ function TeamCard({ member, index }: TeamCardProps) {
             <h3 className="text-lg lg:text-xl text-brand-dark font-fredoka font-bold mb-1 truncate w-full">
               {member.name}
             </h3>
-            {member.role && (
+            {role && (
               <p className="text-xs lg:text-sm text-brand-green font-satoshi font-semibold">
-                {member.role}
+                {role}
               </p>
             )}
 
             <div className="absolute bottom-3 text-[10px] text-brand-green/80 font-fredoka font-semibold tracking-wider animate-pulse">
-              Ver Info
+              {t.team.viewInfo}
             </div>
           </div>
         </div>
@@ -81,7 +87,7 @@ function TeamCard({ member, index }: TeamCardProps) {
             <h3 className="text-xl text-brand-green font-fredoka font-bold mb-3">{member.name}</h3>
             <p className="text-gray-600 text-sm font-satoshi leading-relaxed">
               {'"'}
-              {member.description}
+              {description}
               {'"'}
             </p>
             <div className="mt-4 text-2xl">{member.emoji}</div>
@@ -93,7 +99,9 @@ function TeamCard({ member, index }: TeamCardProps) {
 }
 
 export default function Team() {
-  // Dividimos el array: los primeros 2 para la fila de arriba, el resto para abajo
+  const { t } = useLanguage();
+
+  // Dividimos el array: los primeros 3 para la fila de arriba, el resto para abajo
   const topRow = teamMembers.slice(0, 3);
   const bottomRow = teamMembers.slice(3);
 
@@ -106,10 +114,10 @@ export default function Team() {
         className="text-center mb-12"
       >
         <h2 className="text-4xl md:text-5xl font-fredoka font-black mb-4 text-brand-dark text-glow uppercase tracking-normal">
-          La Familia
+          {t.team.title}
         </h2>
         <p className="text-xl font-satoshi text-gray-600 max-w-2xl mx-auto">
-          El equipo detrás de la magia.
+          {t.team.subtitle}
         </p>
       </motion.div>
 

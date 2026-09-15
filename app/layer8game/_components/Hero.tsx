@@ -2,8 +2,11 @@
 
 import { Flame } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Layer8Hero() {
+  const { t } = useLanguage();
+
   return (
     <div className="text-center mb-16 max-w-4xl">
       <motion.div
@@ -12,7 +15,7 @@ export default function Layer8Hero() {
         className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-red/20 bg-brand-red/5 text-brand-red font-fredoka text-xs sm:text-sm font-medium mb-6"
       >
         <Flame className="w-4 h-4 text-brand-red animate-pulse" />
-        [ALERTA: REINICIO MANUAL REQUERIDO]
+        {t.layer8.hero.alert}
       </motion.div>
 
       <motion.h1
@@ -30,7 +33,7 @@ export default function Layer8Hero() {
         transition={{ delay: 0.2 }}
         className="text-lg md:text-xl font-sharetech uppercase text-brand-red tracking-wider mb-8 bg-brand-red/5 py-2 px-4 rounded border border-brand-red/10 max-w-3xl mx-auto font-bold leading-relaxed"
       >
-        {'"'}EL SISTEMA ESTÁ PODRIDO. VOS SOS LA PURGA.{'"'}
+        {t.layer8.hero.tagline}
       </motion.p>
 
       {/* Badges de Información Rápida */}
@@ -41,16 +44,16 @@ export default function Layer8Hero() {
         className="flex flex-wrap justify-center gap-2 font-sharetech text-xs"
       >
         <span className="px-3 py-1.5 bg-slate-50 border border-brand-green/20 rounded-md text-brand-green font-semibold">
-          GÉNERO: TWIN-STICK ROGUELITE / BULLET HEAVEN
+          {t.layer8.hero.genre}
         </span>
         <span className="px-3 py-1.5 bg-slate-50 border border-brand-green/20 rounded-md text-brand-green font-semibold">
-          PLATAFORMA: PC (STEAM)
+          {t.layer8.hero.platform}
         </span>
         <span className="px-3 py-1.5 bg-slate-50 border border-brand-green/20 rounded-md text-brand-green font-semibold">
-          TARGET: TEEN / YOUNG ADULT
+          {t.layer8.hero.target}
         </span>
         <span className="px-3 py-1.5 bg-slate-50 border border-brand-green/20 rounded-md text-brand-green font-semibold animate-pulse">
-          FECHA: Q4 2027
+          {t.layer8.hero.releaseDate}
         </span>
       </motion.div>
     </div>

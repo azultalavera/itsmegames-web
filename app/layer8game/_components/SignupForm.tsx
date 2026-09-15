@@ -10,10 +10,12 @@ import {
   Terminal as TerminalIcon,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 type SignupStatus = 'idle' | 'loading' | 'success' | 'error';
 
 export default function SignupForm() {
+  const { t } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<SignupStatus>('idle');
@@ -43,12 +45,12 @@ export default function SignupForm() {
       }
 
       setStatus('success');
-      setMessage('ACCESO CONCEDIDO. Has sido incluido en la lista de interesados.');
+      setMessage(t.layer8.signup.msgSuccess);
       setName('');
       setEmail('');
     } catch {
       setStatus('error');
-      setMessage('ERROR DE SISTEMA. Inténtalo de nuevo más tarde.');
+      setMessage(t.layer8.signup.msgError);
     }
   };
 
@@ -65,7 +67,7 @@ export default function SignupForm() {
         <div className="flex items-center gap-3 mb-6">
           <TerminalIcon className="text-brand-green w-5 h-5" />
           <h2 className="text-xl font-orbitron font-bold text-brand-dark uppercase tracking-wider">
-            PROTOCOLO DE ACCESO
+            {t.layer8.signup.title}
           </h2>
         </div>
 
@@ -74,15 +76,12 @@ export default function SignupForm() {
           <div className="space-y-3">
             <div className="flex gap-2">
               <span className="text-brand-green/50 shrink-0">{`>`}</span>
-              <p className="text-gray-600 font-medium">
-                Dejanos tu mail para registrarte en la próxima beta cerrada y darnos soporte durante
-                el desarrollo.
-              </p>
+              <p className="text-gray-600 font-medium">{t.layer8.signup.prompt1}</p>
             </div>
             <div className="flex gap-2">
               <span className="text-brand-green/50 shrink-0">{`>`}</span>
               <p className="text-gray-600 font-medium">
-                Inyectando protocolo de registro en Vanguard Mainframes...
+                {t.layer8.signup.prompt2}
                 <span className="inline-block w-1.5 h-3.5 bg-brand-green/50 ml-1 align-middle animate-pulse" />
               </p>
             </div>
@@ -95,7 +94,7 @@ export default function SignupForm() {
               type="text"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              placeholder="NOMBRE COMPLETO"
+              placeholder={t.layer8.signup.namePlaceholder}
               required
               className="w-full bg-slate-50 border border-brand-green/20 rounded-lg px-4 py-3 text-brand-green font-mono placeholder:text-brand-green/30 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-all"
               disabled={status === 'loading' || status === 'success'}
@@ -107,7 +106,7 @@ export default function SignupForm() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="USUARIO@SECTOR.COM"
+              placeholder={t.layer8.signup.emailPlaceholder}
               required
               className="w-full bg-slate-50 border border-brand-green/20 rounded-lg px-4 py-3 text-brand-green font-mono placeholder:text-brand-green/30 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green transition-all"
               disabled={status === 'loading' || status === 'success'}
@@ -120,7 +119,7 @@ export default function SignupForm() {
           <button
             type="submit"
             disabled={status === 'loading' || status === 'success'}
-            className={`w-full py-3 rounded-lg font-orbitron font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 ${
+            className={`w-full py-3 rounded-lg font-orbitron font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${
               status === 'success'
                 ? 'bg-brand-green text-white shadow-[0_4px_12px_rgba(24,122,52,0.2)]'
                 : 'bg-brand-green/5 border border-brand-green/30 text-brand-green hover:bg-brand-green hover:text-white hover:shadow-[0_4px_15px_rgba(24,122,52,0.15)]'
@@ -136,12 +135,12 @@ export default function SignupForm() {
             ) : status === 'success' ? (
               <>
                 <CheckCircle className="w-5 h-5" />
-                Registrado
+                {t.layer8.signup.btnSuccess}
               </>
             ) : (
               <>
                 <Send className="w-5 h-5" />
-                Enviar Datos
+                {t.layer8.signup.btnSubmit}
               </>
             )}
           </button>

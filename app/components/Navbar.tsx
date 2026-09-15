@@ -5,24 +5,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import LanguageSwitch from '@/app/components/LanguageSwitch';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import logoPerro from '@/public/brand/logo-perro.png';
-
-interface NavLink {
-  name: string;
-  href: string;
-}
-
-const navLinks: NavLink[] = [
-  { name: 'Inicio', href: '/#home' },
-  { name: 'Juegos', href: '/#games' },
-  { name: 'Historia', href: '/#story' },
-  { name: 'Equipo', href: '/#team' },
-  { name: 'Socios', href: '/#sponsors' },
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t.navbar.home, href: '/#home' },
+    { name: t.navbar.games, href: '/#games' },
+    { name: t.navbar.story, href: '/#story' },
+    { name: t.navbar.team, href: '/#team' },
+    { name: t.navbar.sponsors, href: '/#sponsors' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,15 +67,20 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-green to-brand-tan group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
+          <div className="pl-2 border-l border-brand-green/20">
+            <LanguageSwitch />
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        {/* Mobile Header Right: Switch + Hamburger */}
+        <div className="md:hidden flex items-center space-x-2.5">
+          <LanguageSwitch compact />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-brand-dark hover:text-brand-green transition-colors p-1.5 rounded-lg focus:outline-none"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className="text-brand-dark hover:text-brand-green transition-colors p-1.5 rounded-lg focus:outline-none cursor-pointer"
           >
-            {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>
@@ -99,6 +102,9 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <div className="pt-2 flex justify-center border-t border-brand-green/10">
+            <LanguageSwitch />
+          </div>
         </motion.div>
       )}
     </motion.nav>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Fredoka, Inter, Orbitron, Share_Tech_Mono, VT323 } from 'next/font/google';
 import ClarityInit from '@/app/components/ClarityInit';
 import { MotionProvider } from '@/app/components/MotionProvider';
+import { LanguageProvider } from '@/lib/i18n/LanguageContext';
 import '@/styles/globals.css';
 
 const fredoka = Fredoka({
@@ -68,7 +69,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${fredoka.variable} ${inter.variable} ${orbitron.variable} ${shareTech.variable} ${vt323.variable}`}
     >
       <body>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </MotionProvider>
         <ClarityInit />
       </body>
     </html>

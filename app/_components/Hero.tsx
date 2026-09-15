@@ -3,9 +3,12 @@
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import logoPerro from '@/public/brand/logo-perro.png';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-12 py-8 md:py-12 min-h-[calc(100vh-80px)]">
       {/* Área de Texto */}
@@ -16,10 +19,10 @@ export default function Hero() {
         className="max-w-2xl text-left flex-1"
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-fredoka mb-4 leading-[1.1] text-brand-dark uppercase tracking-normal">
-          FROM PLAYERS <br className="hidden sm:inline" />
-          TO{' '}
+          {t.hero.titleLine1} <br className="hidden sm:inline" />
+          {t.hero.titleLine2Pre}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-brand-tan text-glow">
-            CREATORS
+            {t.hero.titleLine2Highlight}
           </span>
         </h1>
 
@@ -29,8 +32,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 max-w-xl font-satoshi leading-relaxed"
         >
-          Creando mundos que inspiran. Transformamos nuestra pasión por jugar en experiencias
-          interactivas únicas.
+          {t.hero.description}
         </motion.p>
 
         {/* Insignia Decorativa */}
@@ -41,7 +43,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-green/20 bg-brand-green/10 text-brand-green font-fredoka text-xs sm:text-sm font-medium"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-ping" />
-          Córdoba, Argentina • Estudio Indie
+          {t.hero.badge}
         </motion.div>
       </motion.div>
 
@@ -91,7 +93,7 @@ export default function Hero() {
             className="flex flex-col items-center text-gray-400 hover:text-brand-green transition-colors"
           >
             <span className="text-[10px] font-fredoka uppercase tracking-wider font-semibold opacity-0 group-hover:opacity-100 transition-opacity mb-2">
-              Explorar
+              {t.hero.explore}
             </span>
             <motion.div
               animate={{ y: [0, 6, 0] }}
