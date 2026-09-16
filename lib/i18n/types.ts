@@ -106,6 +106,7 @@ export interface Translations {
         permanentTitle: string;
         permanentList: Array<{ title: string; desc: string }>;
         glitchesTitle: string;
+        penaltyLabel: string;
         glitchesList: Array<{ title: string; desc: string; penalty: string }>;
       };
       npcs: {
@@ -117,6 +118,11 @@ export interface Translations {
         title: string;
         minTitle: string;
         recTitle: string;
+        minGpu: string;
+        minStorage: string;
+        recCpu: string;
+        recGpu: string;
+        recStorage: string;
       };
     };
     objectives: {
@@ -162,5 +168,9 @@ export interface Translations {
     ariaLabel: string;
     enTitle: string;
     esTitle: string;
+  };
+  notFound: {
+    description: string;
+    respawn: string;
   };
 }

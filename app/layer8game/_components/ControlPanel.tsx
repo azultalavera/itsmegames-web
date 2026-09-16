@@ -111,7 +111,10 @@ export default function ControlPanel() {
                     {t.layer8.controlPanel.upgrades.glitchesList.map((item, index) => (
                       <li key={index}>
                         <strong>{item.title} </strong>
-                        {item.desc} <em>Penalización: {item.penalty}</em>
+                        {item.desc}{' '}
+                        <em>
+                          {t.layer8.controlPanel.upgrades.penaltyLabel} {item.penalty}
+                        </em>
                       </li>
                     ))}
                   </ul>
@@ -163,8 +166,8 @@ export default function ControlPanel() {
                     <li>OS: Windows 10/11 (64-bit)</li>
                     <li>CPU: Dual Core 2.0 GHz</li>
                     <li>RAM: 4 GB RAM</li>
-                    <li>GPU: Gráficos integrados (DX11) / Integrated Graphics</li>
-                    <li>Almacenamiento / Storage: 2 GB Libres / Free</li>
+                    <li>{t.layer8.controlPanel.specs.minGpu}</li>
+                    <li>{t.layer8.controlPanel.specs.minStorage}</li>
                   </ul>
                 </div>
                 <div className="p-4 bg-white rounded-xl border border-brand-green/20">
@@ -173,10 +176,10 @@ export default function ControlPanel() {
                   </span>
                   <ul className="space-y-1 text-xs text-gray-600">
                     <li>OS: Windows 10/11 (64-bit)</li>
-                    <li>CPU: AMD Ryzen 5 5600GT or similar</li>
+                    <li>{t.layer8.controlPanel.specs.recCpu}</li>
                     <li>RAM: 8 GB RAM</li>
-                    <li>GPU: NVIDIA RTX 5060 or similar</li>
-                    <li>Almacenamiento / Storage: 2 GB Libres (SSD) / Free (SSD)</li>
+                    <li>{t.layer8.controlPanel.specs.recGpu}</li>
+                    <li>{t.layer8.controlPanel.specs.recStorage}</li>
                   </ul>
                 </div>
               </div>

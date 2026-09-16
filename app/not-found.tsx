@@ -3,8 +3,11 @@
 import Link from 'next/link';
 import { AlertTriangle, RefreshCcw } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function NotFound() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-4 relative overflow-hidden font-inter text-white">
       {/* Fondo con ruido estático */}
@@ -51,10 +54,7 @@ export default function NotFound() {
           SYSTEM FAILURE
         </h2>
 
-        <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
-          Te has salido del mapa. El archivo que buscas ha sido eliminado o nunca existió en este
-          sector.
-        </p>
+        <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">{t.notFound.description}</p>
 
         {/* Botón Respawn */}
         <Link
@@ -62,7 +62,7 @@ export default function NotFound() {
           className="inline-flex items-center gap-3 px-8 py-4 bg-neon/10 border border-neon text-neon font-orbitron font-bold uppercase tracking-wider hover:bg-neon hover:text-black transition-all duration-300 group shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_40px_rgba(0,255,255,0.6)]"
         >
           <RefreshCcw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
-          Respawn (Volver al Inicio)
+          {t.notFound.respawn}
         </Link>
       </div>
 

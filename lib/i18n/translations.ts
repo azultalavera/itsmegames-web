@@ -167,6 +167,7 @@ export const translations: Record<Language, Translations> = {
             { title: 'Active Cooling:', desc: 'Reduces evasive Dash cooldowns.' },
           ],
           glitchesTitle: 'VOLATILE GLITCHES (CORRUPTION)',
+          penaltyLabel: 'Penalty:',
           glitchesList: [
             { title: 'Overclock:', desc: 'Extreme fire rate.', penalty: 'Screen flickers.' },
             {
@@ -214,6 +215,11 @@ export const translations: Record<Language, Translations> = {
           title: 'TECHNICAL HARDWARE REQUIREMENTS (PC)',
           minTitle: '[MINIMUM REQUIREMENTS]',
           recTitle: '[RECOMMENDED REQUIREMENTS]',
+          minGpu: 'GPU: Integrated Graphics (DX11)',
+          minStorage: 'Storage: 2 GB Free',
+          recCpu: 'CPU: AMD Ryzen 5 5600GT or similar',
+          recGpu: 'GPU: NVIDIA RTX 5060 or similar',
+          recStorage: 'Storage: 2 GB Free (SSD)',
         },
       },
       objectives: {
@@ -317,6 +323,11 @@ export const translations: Record<Language, Translations> = {
       ariaLabel: 'Language selector',
       enTitle: 'English',
       esTitle: 'Spanish',
+    },
+    notFound: {
+      description:
+        'You have gone off the map. The file you are looking for has been deleted or never existed in this sector.',
+      respawn: 'Respawn (Back to Home)',
     },
   },
   es: {
@@ -497,6 +508,7 @@ export const translations: Record<Language, Translations> = {
             },
           ],
           glitchesTitle: 'GLITCHES TEMPORALES (CORRUPCIÓN)',
+          penaltyLabel: 'Penalización:',
           glitchesList: [
             { title: 'Overclock:', desc: 'Cadencia extrema.', penalty: 'Pantalla parpadea.' },
             {
@@ -544,6 +556,11 @@ export const translations: Record<Language, Translations> = {
           title: 'REQUISITOS TÉCNICOS DE HARDWARE (PC)',
           minTitle: '[REQUISITOS MÍNIMOS]',
           recTitle: '[REQUISITOS RECOMENDADOS]',
+          minGpu: 'GPU: Gráficos integrados (DX11)',
+          minStorage: 'Almacenamiento: 2 GB libres',
+          recCpu: 'CPU: AMD Ryzen 5 5600GT o similar',
+          recGpu: 'GPU: NVIDIA RTX 5060 o similar',
+          recStorage: 'Almacenamiento: 2 GB libres (SSD)',
         },
       },
       objectives: {
@@ -647,6 +664,11 @@ export const translations: Record<Language, Translations> = {
       ariaLabel: 'Selector de idioma',
       enTitle: 'Inglés',
       esTitle: 'Español',
+    },
+    notFound: {
+      description:
+        'Te has salido del mapa. El archivo que buscas ha sido eliminado o nunca existió en este sector.',
+      respawn: 'Respawn (Volver al Inicio)',
     },
   },
 };

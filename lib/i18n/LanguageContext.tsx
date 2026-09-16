@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useSyncExternalStore } from 'react';
 import { translations } from './translations';
 import type { Language, Translations } from './types';
 
@@ -15,30 +15,47 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getInitialLanguage(): Language {
+  if (typeof document === 'undefined') {
+    return 'en';
+  }
+
+  const language = document.documentElement.dataset.lang;
+  return language === 'es' || language === 'en' ? language : 'en';
+}
+
+function subscribeToLanguage() {
+  return () => {};
+}
+
+function getServerLanguage(): Language {
+  return 'en';
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  // Default is English as requested
-  const [language, setLanguageState] = useState<Language>('en');
+  const domLanguage = useSyncExternalStore(
+    subscribeToLanguage,
+    getInitialLanguage,
+    getServerLanguage,
+  );
+  const [selectedLanguage, setLanguageState] = useState<Language | null>(null);
+  const language = selectedLanguage ?? domLanguage;
 
   useEffect(() => {
-    // Read stored language preference if exists
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY) as Language | null;
-      if (stored === 'en' || stored === 'es') {
-        setLanguageState(stored);
-        document.documentElement.lang = stored;
-      } else {
-        document.documentElement.lang = 'en';
-      }
-    } catch {
-      // localStorage may fail in restricted/private contexts
-    }
-  }, []);
+    const frame = requestAnimationFrame(() => {
+      document.documentElement.dataset.languageReady = 'true';
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.lang = lang;
+
     try {
       localStorage.setItem(STORAGE_KEY, lang);
-      document.documentElement.lang = lang;
     } catch {
       // Ignore localStorage write error
     }
